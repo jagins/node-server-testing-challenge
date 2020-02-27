@@ -4,7 +4,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgresql://localhost/songs',
+    connection: 'postgres://localhost/songs',
     pool: {
       min: 2,
       max: 10

@@ -7,4 +7,14 @@ router.get('/', (req, res) =>
     res.json({message: 'songs router'});
 })
 
+router.post('/', (req, res) =>
+{
+
+})
+
+router.delete('/', (req, res) =>
+{
+    
+})
+
 module.exports = router;
