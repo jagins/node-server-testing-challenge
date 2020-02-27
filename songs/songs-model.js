@@ -20,8 +20,18 @@ function getAllSongs()
     return database('songs');
 }
 
+function deleteSong(id)
+{
+    return database('songs').where({id}).del()
+    .then(deleted =>
+    {
+        return getAllSongs();
+    })
+}
+
 module.exports = {
     addSong,
     findSongById,
-    getAllSongs
+    getAllSongs,
+    deleteSong
 }
