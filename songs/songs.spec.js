@@ -58,5 +58,13 @@ describe('POST /api/songs', function()
 
 describe('DELETE /api/songs/:id ', function()
 {
-
+    test('should return JSON', function()
+    {
+        return request(server)
+            .delete('/api/songs/2')
+            .then(res =>
+            {
+                expect(res.type).toMatch(/json/);
+            })
+    })
 })
