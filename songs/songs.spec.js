@@ -55,3 +55,8 @@ describe('POST /api/songs', function()
             })
    })
 })
+
+describe('DELETE /api/songs/:id ', function()
+{
+
+})
