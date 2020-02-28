@@ -3,11 +3,10 @@
 module.exports = {
 
   development: {
-    client: 'pg',
-    connection: 'postgres://localhost/songs',
-    pool: {
-      min: 2,
-      max: 10
+    client: 'sqlite3',
+    useNullAsDefault: true,
+    connection: {
+      filename: './database/songs.db3'
     },
     migrations: {
       directory: './database/migrations',
