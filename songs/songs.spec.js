@@ -67,4 +67,26 @@ describe('DELETE /api/songs/:id ', function()
                 expect(res.type).toMatch(/json/);
             })
     })
+
+    test('should return an array with the correct length', function()
+    {
+        const song = {
+            title: 'hail to the king',
+            artist: 'avenged sevenfold',
+            album: 'hail to the king'
+        }
+
+        return request(server)
+            .post('/api/songs')
+            .send(song)
+            .then(res =>
+            {
+                return request(server)
+                    .delete(`/api/songs/${res.body.id}`)
+                    .then(response =>
+                    {
+                        expect(response.body.length).toBe(1);
+                    })
+            })
+    })
 })
